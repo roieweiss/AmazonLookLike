@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import User from "./models/User";
+import User from "./models/User.js";
+
 
 const app = express();
 
@@ -11,11 +12,10 @@ app.use(express.urlencoded({extended: false}));
 // this threee lines is used in all projects
 
 //routs:
-//app.post('/addUser', async(req, res)=>{
-  //  const {user} = req.body;
-    //const newUser = await User.create(user);
-    //res.send(newUser);
-//})
+app.post('/addUser', async(req, res)=>{
+  const newUser = await User.create(req.body);
+  res.send(newUser);
+})
 
 
 mongoose.connect("mongodb+srv://roiemw:devdev@cluster0.3igmy94.mongodb.net/AmazonLookalike?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
