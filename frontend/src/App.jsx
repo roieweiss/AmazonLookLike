@@ -1,15 +1,30 @@
 import './App.css'
-import Title from './components/Title.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Title from './Components/Shared/Title.jsx';
+import Container from 'react-bootstrap/Container';
+import {HomePage} from './Pages/HomePage.jsx';
+import Footer from './Components/Shared/Footer.jsx';
+
 
 function App() {
 
 
   return (
+    <BrowserRouter>
+      <div>
+        {/*<header />*/}
+        <main>
+         <Container>
+          <Routes>
+            <Route path= "/" element={<HomePage/>}></Route>
+          </Routes>
+         </Container>
+        </main>
+        <Footer/>
+      </div>
+    </BrowserRouter>
 
-<div>
-  <Title title = "AMAZON"></Title>
-   hello 
-   </div>
+
   )
 }
 
