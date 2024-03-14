@@ -1,9 +1,9 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Title from './Components/Shared/Title.jsx';
+//import Title from './Components/Shared/Title.jsx';
 import Container from 'react-bootstrap/Container';
 import {HomePage} from './Pages/HomePage.jsx';
-import Footer from './Components/Shared/Footer.jsx';
+import Footer from './Components/Shared/Footer';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className='d-flex flex-column side-allpage min-width'>
         {/*<header />*/}
         <main>
          <Container>
