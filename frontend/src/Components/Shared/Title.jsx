@@ -1,14 +1,14 @@
-import { Helmet } from 'react-helmet-async'
+import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
 
-const Title = ({title}) => {
+const Title = ({ title }) => {
   return (
-
     <Helmet>
-    <title> {title} </title>
-        </Helmet>
-  )
-}
-Title.PropTypes = {title: PropTypes.string}
+      <title>{title}</title>
+    </Helmet>
+  );
+};
 
-export default Title
+Title.propTypes = { title: PropTypes.string };
+
+export default Title;
