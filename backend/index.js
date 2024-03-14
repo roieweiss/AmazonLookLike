@@ -11,13 +11,13 @@ app.use(cors()); //does nothing at this moment
 app.use(express.json()); //parses jsons
 app.use(express.urlencoded({extended: false}));
 // this threee lines is used in all projects
-
+const PORT = process.env.PORT || 8080;
 //routs:
-app.post('/addUser', async(req, res)=>{
-  const {user} = req.body;
-  const newUser = await User.create(user);
-  res.send(newUser);
-})
+//app.post('/addUser', async(req, res)=>{
+  //const {user} = req.body;
+  //const newUser = await User.create(user);
+  //res.send(newUser);
+//})
 
 
 mongoose.connect(process.env.MONGO_CONNECTION_STRING)
