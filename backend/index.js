@@ -13,7 +13,8 @@ app.use(express.urlencoded({extended: false}));
 
 //routs:
 app.post('/addUser', async(req, res)=>{
-  const newUser = await User.create(req.body);
+  const {user} = req.body;
+  const newUser = await User.create(user);
   res.send(newUser);
 })
 
