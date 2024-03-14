@@ -7,7 +7,7 @@ function App() {
   return (
 
 <div>
-  <Title title = "wellcome"> </Title>
+  <Title title = "AMAZON"></Title>
    hello 
    </div>
   )
