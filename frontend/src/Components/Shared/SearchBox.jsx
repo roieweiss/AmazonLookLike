@@ -8,7 +8,7 @@ const SearchBox = () => {
         <Form>
             <InputGroup>
                 <FormControl type="text" name="q" id="q" placeholder="search for product" aria-describedby="button-search"></FormControl>
-                <Button>
+                <Button variant="outline-primary" id="button-search">
                     <i className="fa fa-search"></i>
                 </Button>
             </InputGroup>
