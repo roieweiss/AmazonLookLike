@@ -7,7 +7,7 @@ const Header = () => {
     <header>
 <NavBar bg="dark" variant="dark">
     <Container>
-        <LinkContainer>
+        <LinkContainer to="/">
         <NavBar.Brand>
             <img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" width={80} alt='Amazon logo'/>
         </NavBar.Brand>
