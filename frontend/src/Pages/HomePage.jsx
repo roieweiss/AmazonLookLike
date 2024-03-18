@@ -5,6 +5,7 @@ const HomePage = () => {
     
     <div>
         <Title title="Home Page"></Title>
+        <h1> hello </h1>
         </div>
   )
 }
