@@ -13,6 +13,10 @@ app.use(express.urlencoded({extended: false}));
 // this threee lines is used in all projects
 const PORT = process.env.PORT || 8080;
 //routs:
+app.use("/api/v1/seed",seedRouter);
+app.use((err, req, res, next) =>{
+  res.status(500).send({message: err.message})
+})
 //app.post('/addUser', async(req, res)=>{
   //const {user} = req.body;
   //const newUser = await User.create(user);
