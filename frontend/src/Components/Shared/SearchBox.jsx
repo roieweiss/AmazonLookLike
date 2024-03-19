@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 
 const SearchBox = () => {
     return (
-        <Form className="d-flex me-auto ">
+        <Form className="d-flex me-auto">
             <InputGroup>
                 <FormControl type="text" name="q" id="q" placeholder="search for product" aria-describedby="button-search"></FormControl>
                 <Button variant="outline-primary" id="button-search">

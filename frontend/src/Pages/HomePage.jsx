@@ -4,7 +4,7 @@ const HomePage = () => {
   return (
     
     <div>
-        <Title title="Home Page"></Title>
+        <Title title="Amazon Shop"></Title>
         <h1> hello </h1>
         </div>
   )
