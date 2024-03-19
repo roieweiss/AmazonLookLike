@@ -10,17 +10,18 @@ import Product from "../../../backend/models/Product";
 
 const initialState = { loading: true, error: "", data: [] };
 export const HomePage = () => {
-  const [{ loading, error, data }, dispatch] =
+  const [state, dispatch] =
     useReducer(homePageReducer, initialState);
+  const { loading, error, data } = state;
   useEffect(() => {
     const getProducts = async () => {
       dispatch({ type: "GET_REQUEST" });
       try {
-        const { data } = await axios.get("/api/v1/products")
+        const { data } = await axios.get("http://localhost:8080/api/v1/products")
         dispatch({ type: "GET_SUCCESS", payload: data });
       } catch (error) {
-        dispatch({ type: "GET_FAIL", payload: error.message });
-        console.log(error.message);
+        dispatch({ type: "GET_FAIL", payload: error });
+        console.log(state.error.message);
       }
     };
     getProducts();
@@ -34,11 +35,10 @@ export const HomePage = () => {
           alt="backgroundHomePage" />
       </div>
       <div className="products">
-        {loading ? (<Loading />) : error ?
-          (<MessageBox variant="danger">{error}</MessageBox>)
-          : (<Products products={data}></Products>
+        {loading ? <Loading /> : error ? <MessageBox></MessageBox> : (
+          <div> Display</div>
           )}
-      </div>
+          </div>
     </div>
-  );
-};
+      )
+}
