@@ -15,6 +15,7 @@ app.use(express.urlencoded({extended: false}));
 const PORT = process.env.PORT || 8080;
 //routs:
 app.use("/api/v1/seed",seedRouter);
+app.use("/api/v1/product",seedRouter);
 app.use((err, req, res, next) =>{
   res.status(500).send({message: err.message})
 })

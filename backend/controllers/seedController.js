@@ -8,7 +8,7 @@ await Product.deleteMany();
 
  const users = await User.insertMany(data.users);
 const products = await Product.insertMany(data.products);
-res.send(users,products);
+res.send({users,products});
 };
 
 export default seedData;
