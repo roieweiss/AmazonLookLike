@@ -3,7 +3,7 @@ import Title from "../Components/Shared/Title";
 import homePageReducer from "../Reducers/homePageReducer";
 //import getProducts from "../../../backend/controllers/productsController";
 import axios from 'axios';
-import Loading from '../Components/Shared/Loading';
+import Loading from '../Components/Shared/Loading'
 
 
 const initialState = { loading: true, error: '', data: [] }
@@ -18,7 +18,7 @@ const HomePage = () => {
         dispatch({ type: "GET_SUCCESS", payload: data });
       } catch (error) {
         dispatch({ type: "GET_FAIL", payload: error });
-        console.log(state / error);
+        console.log(state.error.mwssage);
       }
     };
     getProducts();
