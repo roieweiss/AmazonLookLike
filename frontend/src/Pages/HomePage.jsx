@@ -4,6 +4,7 @@ import homePageReducer from "../Reducers/homePageReducer";
 //import getProducts from "../../../backend/controllers/productsController";
 import axios from 'axios';
 
+
 const initialState = { loading: true, error: '', data: [] }
 const HomePage = () => {
   const [state, dispatch] = useReducer(homePageReducer, initialState)
@@ -15,6 +16,7 @@ const HomePage = () => {
         dispatch({ type: "GET_SUCCESS", payload: data});
       } catch (error) {
         dispatch({ type: "GET_FAIL", payload: error});
+        console.log(state/error);
       }
     };
     getProducts();
@@ -22,7 +24,10 @@ const HomePage = () => {
   return (
     <div>
       <Title title="Amazon Shop"></Title>
-      <h1> hello </h1>
+      <div  className='backgroundHomePage'>
+<img style={{width:"100%"}} src="https://m.media-amazon.com/images/I/81d5OrWJAkL._SX3000_.jpg "/>
+      </div>
+      hello 
     </div>
   )
 }
