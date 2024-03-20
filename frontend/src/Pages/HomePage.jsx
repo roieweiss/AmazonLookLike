@@ -3,7 +3,6 @@ import Title from "../Components/Shared/Title";
 import homePageReducer from "../Reducers/homePageReducer";
 import axios from 'axios';
 import Loading from '../Components/Shared/Loading';
-import Product from "../../../backend/models/Product";
 import Products from "../Components/HomePage/Products";
 
 

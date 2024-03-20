@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Product = ({product}) => {
   return (
-<Card>
+<Card className='product-card mb-4'>
     <Link to={`/product/${product.token}`}>
         <Card.Img variant='top' src={product.image} alt={product.title}/>
     </Link>
@@ -13,6 +13,7 @@ const Product = ({product}) => {
         <Link to={`/product/${product.token}`}>
             <Card.Title>{product.title}</Card.Title>
         </Link>
+        <Rating rating={Product.rating.rate} numReviews={product.rating.count}/>
         <Card.Text>${product.price}</Card.Text>
         {product.countInStock===0? <Button variant="light" disabled>Out Of Stock</Button>:
         <Button className="btn-primary" > Add to Cart</Button>}
