@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import Rating from "../Shared/Rating";
 
 const Product = ({product}) => {
   return (
