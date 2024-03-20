@@ -10,7 +10,7 @@ import Products from "../Components/HomePage/Products";
 
 
 const initialState = { loading: true, error: "", data: [] };
-export const HomePage = () => {
+ const HomePage = () => {
   const [state, dispatch] =
     useReducer(homePageReducer, initialState);
   const { loading, error, data } = state;
@@ -43,3 +43,4 @@ export const HomePage = () => {
     </div>
       )
 }
+export default HomePage;
