@@ -2,26 +2,25 @@ import { useEffect, useReducer } from "react";
 import Title from "../Components/Shared/Title";
 import homePageReducer from "../Reducers/homePageReducer";
 import axios from 'axios';
-import Loading from '../Components/Shared/Loading';
+import Loading from "../Components/Shared/Loading";
 import MessageBox from "../Components/Shared/MessageBox";
-import Products from "../Components/HomePage/Products";
-
+import Products from "../Components/HomePage/Products"
+import { GET_FAIL, GET_REQUEST, GET_SUCCESS } from "../actions"
 
 
 
 const initialState = { loading: true, error: "", data: [] };
 const HomePage = () => {
-  const [state, dispatch] =
+  const [{ loading, error, data }, dispatch] =
     useReducer(homePageReducer, initialState);
-  const { loading, error, data } = state;
   useEffect(() => {
     const getProducts = async () => {
-      dispatch({ type: "GET_REQUEST" });
+      dispatch({ type: GET_REQUEST });
       try {
         const { data } = await axios.get("/api/v1/products")
-        dispatch({ type: "GET_SUCCESS", payload: data });
+        dispatch({ type: GET_SUCCESS, payload: data });
       } catch (error) {
-        dispatch({ type: "GET_FAIL", payload: error.message });
+        dispatch({ type: GET_FAIL, payload: error });
         console.log(error.message);
       }
     };
@@ -36,7 +35,12 @@ const HomePage = () => {
           alt="backgroundHomePage" />
       </div>
       <div className="products">
-        {loading ? <Loading /> : error ? <MessageBox variant="danger">{error}</MessageBox> : (
+        {loading ? (
+          <Loading />
+        ) : error ? (
+
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
           <Products products={data}></Products>
         )}
       </div>
