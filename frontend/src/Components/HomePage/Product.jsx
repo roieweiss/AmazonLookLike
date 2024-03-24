@@ -3,8 +3,13 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Rating from "../Shared/Rating";
+import { Store } from "../../Store";
+import { useContext } from "react";
 
 const Product = ({ product }) => {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart } = state;
+  const { cartItems } = cart;
   return (
     <Card className="product-card mb-4">
       <Link to={`/product/${product.token}`}>
