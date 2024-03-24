@@ -5,11 +5,14 @@ import App from './App.jsx'
 import './index.css'
 import {HelmetProvider} from 'react-helmet-async';
 
+axios.defaults.baseUrl = 'http://localhost:8080'; //change this to server obce we have one in production for import from .env
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <StoreProvider>
     <HelmetProvider>
     <App />
     </HelmetProvider>
+    </StoreProvider>
   </React.StrictMode>,
 )
