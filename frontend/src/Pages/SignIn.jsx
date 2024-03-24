@@ -27,6 +27,11 @@ const SignIn = () => {
                     <Form.Control required onChange={(e)=> setEmail(e.target.value)}
                     placeholder="example@exmaple.com"></Form.Control>
                 </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.label>password</Form.label>
+                    <Form.Control type="password" required onChange={(e)=> setpassword(e.target.value)}
+                    placeholder="Enter password"></Form.Control>
+                </Form.Group>
             </Form>
         </Container> >
   )
