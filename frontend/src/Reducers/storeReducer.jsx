@@ -1,4 +1,5 @@
 import { USER_SIGNIN } from "../actions";
+import { USER_SIGNOUT } from "../actions";
 
 const storeReducer = (state, action) => {
     switch (action.type) {
